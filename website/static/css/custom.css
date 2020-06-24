@@ -4,8 +4,32 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
- 
+
 /* your custom css */
+
+/*body {
+    font-family: 'Open Sans';
+}*/
+.fixedHeaderContainer {
+    background-color: #FFFFFF;
+}
+.navigationSlider .slidingNav ul li a {
+    color: #000;
+}
+.navigationSlider .slidingNav ul li > a:focus,
+.navigationSlider .slidingNav ul li > a:hover,
+.navigationSlider .slidingNav ul li.siteNavItemActive > a,
+.navigationSlider .slidingNav ul li.siteNavGroupActive > a {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+img[alt="github-oauth-setup"] {
+    width: 650px;
+}
+img[alt="github-oauth-secrets"] {
+    width: 650px;
+}
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }

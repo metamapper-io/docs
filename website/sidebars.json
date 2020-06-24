@@ -1,10 +1,30 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Metadata Management": [
+        "metadata-management--getting-started",
+        "metadata-management--schema-inspection",
+        "metadata-management--custom-properties",
+        "metadata-management--annotations",
+        "metadata-management--search"
+    ],
+    "Workspace Management": [
+        "workspace-management--introduction",
+        "workspace-management--access-mgmt",
+        "workspace-management--sso-introduction",
+        "workspace-management--sso-google",
+        "workspace-management--sso-github",
+        "workspace-management--sso-saml2"
+    ],
+    "Installation (Self-Hosted)": [
+        "installation--getting-started",
+        "installation--configuring-metamapper",
+        "installation--extending-metamapper",
+        "installation--asynchronous-workers",
+        "installation--email-configuration",
+        "installation--file-storage",
+        "installation--security",
+        "installation--search",
+        "installation--healthchecks"
+    ]
   }
 }

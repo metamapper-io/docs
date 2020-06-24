@@ -38,14 +38,26 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {
+      doc: 'metadata-management--getting-started',
+      label: 'Documentation',
+    },
+    {
+      href: 'https://discuss.metamapper.io',
+      label: 'Discussion',
+    },
+    {
+      blog: true,
+      label: 'Blog',
+    },
+    {
+      href: 'https://app.metamapper.io/account/create',
+      label: 'Cloud',
+    },
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
   headerIcon: 'img/favicon.ico',
@@ -54,26 +66,18 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#4b9957',
+    primaryColor: '#1890ff',
     secondaryColor: '#346b3c',
   },
 
   /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
+
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
+  ],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} Scott Cruwys`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
