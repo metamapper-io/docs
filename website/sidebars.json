@@ -1,14 +1,16 @@
 {
   "docs": {
     "Metadata Management": [
+        "metadata-management",
         "metadata-management--getting-started",
+        "metadata-management--supported-datastores",
         "metadata-management--schema-inspection",
-        "metadata-management--custom-properties",
+        "metadata-management--custom-fields",
         "metadata-management--annotations",
         "metadata-management--search"
     ],
     "Workspace Management": [
-        "workspace-management--introduction",
+        "workspace-management",
         "workspace-management--access-mgmt",
         "workspace-management--sso-introduction",
         "workspace-management--sso-google",
@@ -16,7 +18,7 @@
         "workspace-management--sso-saml2"
     ],
     "Installation (Self-Hosted)": [
-        "installation--getting-started",
+        "installation",
         "installation--configuring-metamapper",
         "installation--extending-metamapper",
         "installation--asynchronous-workers",

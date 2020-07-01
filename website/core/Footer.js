@@ -31,8 +31,6 @@ class Footer extends React.Component {
                 <img
                   src={this.props.config.baseUrl + this.props.config.footerIcon}
                   alt={this.props.config.title}
-                  width="66"
-                  height="58"
                 />
               )}
             </a>
@@ -40,13 +38,13 @@ class Footer extends React.Component {
           <div>
             <h5>Documentation</h5>
             <a
-              href={this.docUrl('metadata-management--getting-started', this.props.language)}
+              href={this.docUrl('metadata-management')}
               target="_blank"
               rel="noreferrer noopener">
               User Guide
             </a>
             <a
-              href={this.docUrl('installation--introduction', this.props.language)}
+              href={this.docUrl('installation')}
               target="_blank"
               rel="noreferrer noopener">
               Installation Guide
@@ -60,7 +58,7 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Discussion
             </a>
-            <a href="https://github.com/">GitHub</a>
+            <a href={this.props.config.repoUrl}>GitHub</a>
            </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>

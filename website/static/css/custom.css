@@ -5,13 +5,80 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* your custom css */
-
-/*body {
+body {
     font-family: 'Open Sans';
-}*/
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.homeContainer {
+    background-color: #f7777B;
+    text-align: left;
+}
+.projectDetails {
+    margin: auto 0;
+}
+.projectDetails .button {
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+.projectDetails .button:hover {
+    background: #FFFFFF;
+    color: #f7777B;
+}
+.projectTagline {
+    color: #FFFFFF;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+.projectDescription {
+    color: #FFFFFF;
+    font-size: 18px;
+    width: 90%;
+}
+.projectImage {
+    text-align: right;
+}
+.projectImage img {
+    width: 80%;
+}
+.homeContainer .homeSplashFade .homeWrapper {
+    padding: 0;
+    margin-top: 30px;
+}
+.homeContainer .homeSplashFade .inner {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+.headerTitle {
+    color: #000;
+}
 .fixedHeaderContainer {
     background-color: #FFFFFF;
+    padding: 0;
+}
+.fixedHeaderContainer a {
+    height: 24px;
+}
+.fixedHeaderContainer img {
+    margin-top: 10px;
+}
+.navigationSlider .slidingNav ul {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.navigationSlider .slidingNav ul li {
+    margin-left: 24px;
 }
 .navigationSlider .slidingNav ul li a {
     color: #000;
@@ -23,18 +90,167 @@
     background-color: #FFFFFF;
     color: #000000;
 }
-
+.container .gridBlock .blockContent h2 {
+    margin-top: 0;
+}
+.container .gridBlock .blockContent h2 p {
+    font-size: 2.875rem !important;
+    margin-bottom: 12px;
+}
+.container .gridBlock .blockContent p {
+    font-size: 20px;
+}
+.container .gridBlock .projectCaption {
+    color: #f7777B;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+.imageAlignRight .blockContent {
+    margin-right: 24px;
+}
+.imageAlignLeft .blockContent {
+    margin-left: 24px;
+}
+.imageAlignSide .blockContent {
+    text-align: left;
+}
+.imageAlignSide .blockImage {
+    flex: 0 1 700px;
+    max-width: 700px;
+}
+.imageAlignSide .blockImage img {
+  border-radius: 4px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+.productShowcaseSection .logos img {
+    max-height: 130px;
+    padding: 20px;
+    width: 130px;
+}
+.productShowcaseInner {
+    padding-top: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+.promoSection .promoRow {
+    padding: 24px 0;
+}
+.promoSection .promoRow .pluginRowBlock {
+    justify-content: left;
+}
+.nav-footer .sitemap .nav-home {
+    width: 250px;
+}
 img[alt="github-oauth-setup"] {
     width: 650px;
 }
 img[alt="github-oauth-secrets"] {
     width: 650px;
 }
+img[alt="account-setup"] {
+    width: 650px;
+}
+img[alt="sso-setup-prompt"] {
+    width: 650px;
+}
+img[alt="saml2-configure-idp"] {
+    width: 650px;
+}
+img[alt="saml2-configure-connection"] {
+    width: 650px;
+}
+img[alt="saml2-attribute-mapping"] {
+    width: 650px;
+}
+img[alt="saml2-auth0-settings"] {
+    width: 500px;
+}
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media only screen and (min-width: 360px) and (max-width: 736px) {
+    .mainContainer {
+        padding-bottom: 0;
+    }
+    .homeContainer .homeSplashFade {
+        padding: 0 12px;
+    }
+    .navigationSlider .slidingNav ul li {
+        margin-left: initial;
+    }
+    .fixedHeaderContainer header img {
+        height: initial;
+        margin: 0;
+    }
+    .headerWrapper {
+        margin: 18px 120px 9px 120px;
+    }
+    .imageAlignSide .blockContent {
+        display: block;
+        margin: 0;
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+    }
+    .imageAlignSide .blockImage {
+        display: block;
+        margin: 0;
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+    }
+    .homeContainer .homeSplashFade .inner {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .column {
+        text-align: center;
+        display: block;
+        flex-direction: row;
+        flex-basis: auto;
+        flex: auto;
+        width: 100%;
+    }
+    .projectTagline {
+        line-height: 48px;
+    }
+    .projectImage {
+        text-align: center;
+    }
+    .promoSection .promoRow .pluginRowBlock {
+        justify-content: center;
+    }
+    body .navPusher {
+        padding-top: 75px;
+    }
+    body.blog .navPusher, body.sideNavVisible .navPusher {
+        padding-top: 100px;
+    }
+    .productShowcaseInner p {
+        padding: 0.8em;
+    }
+    .postContainer .posts {
+        margin-top: 24px;
+    }
+    .nav-footer .sitemap .nav-home {
+        padding-left: 0;
+    }
+    .container .gridBlock .blockContent h2 p {
+        font-size: 2.575rem !important;
+        margin-bottom: 12px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+    .headerWrapper {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 }
 
 @media only screen and (max-width: 1023px) {

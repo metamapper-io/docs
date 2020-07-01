@@ -3,4 +3,14 @@ id: workspace-management--sso-google
 title: SSO Setup: Google
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac euismod odio, eu consequat dui. Nullam molestie consectetur risus id imperdiet. Proin sodales ornare turpis, non mollis massa ultricies id. Nam at nibh scelerisque, feugiat ante non, dapibus tortor. Vivamus volutpat diam quis tellus elementum bibendum. Praesent semper gravida velit quis aliquam. Etiam in cursus neque. Nam lectus ligula, malesuada et mauris a, bibendum faucibus mi. Phasellus ut interdum felis. Phasellus in odio pulvinar, porttitor urna eget, fringilla lectus. Aliquam sollicitudin est eros. Mauris consectetur quam vitae mauris interdum hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This is a short guide on how to setup SSO using Google. You can create a SSO connection from the **Authentication** section of the **Workspace Settings** page.
+
+You will prompted to choose a connection type:
+
+![sso-setup-prompt](/img/guides/sso-setup-prompt.png)
+
+Once you select Google, you will be re-directed to the Google authentication page. Choose the account with the domain that you want to authenticate. If authentication worked, you will be redirected to the screen shown below. Confirm that the domain and default role is correct and click the **Save Changes** button.
+
+![sso-setup-google](/img/guides/sso-setup-google.png)
+
+That's it! You should now be able to set your default connection to the connection you just created.

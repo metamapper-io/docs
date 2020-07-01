@@ -6,12 +6,97 @@
  */
 
 const React = require('react');
+const classNames = require('classnames');
 
 const CompLibrary = require('../../core/CompLibrary.js');
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
+
+class GridBlock extends React.Component {
+  renderBlock(origBlock) {
+    const blockDefaults = {
+      imageAlign: 'left',
+    };
+
+    const block = Object.assign(blockDefaults, origBlock);
+
+    const blockClasses = classNames('blockElement', this.props.className, {
+      alignCenter: this.props.align === 'center',
+      alignRight: this.props.align === 'right',
+      fourByGridBlock: this.props.layout === 'fourColumn',
+      imageAlignSide:
+        block.image &&
+        (block.imageAlign === 'left' || block.imageAlign === 'right'),
+      imageAlignTop: block.image && block.imageAlign === 'top',
+      imageAlignRight: block.image && block.imageAlign === 'right',
+      imageAlignBottom: block.image && block.imageAlign === 'bottom',
+      imageAlignLeft: block.image && block.imageAlign === 'left',
+      threeByGridBlock: this.props.layout === 'threeColumn',
+      twoByGridBlock: this.props.layout === 'twoColumn',
+    });
+
+    const topLeftImage =
+      (block.imageAlign === 'top' || block.imageAlign === 'left') &&
+      this.renderBlockImage(block.image, block.imageLink, block.imageAlt);
+
+    const bottomRightImage =
+      (block.imageAlign === 'bottom' || block.imageAlign === 'right') &&
+      this.renderBlockImage(block.image, block.imageLink, block.imageAlt);
+
+    return (
+      <div className={blockClasses} key={block.title}>
+        {topLeftImage}
+        <div className="blockContent">
+          <div className="projectCaption">
+            {block.caption}
+          </div>
+          {this.renderBlockTitle(block.title)}
+          {block.content}
+        </div>
+        {bottomRightImage}
+      </div>
+    );
+  }
+
+  renderBlockImage(image, imageLink, imageAlt) {
+    if (!image) {
+      return null;
+    }
+
+    return (
+      <div className="blockImage">
+        {imageLink ? (
+          <a href={imageLink}>
+            <img src={image} alt={imageAlt} />
+          </a>
+        ) : (
+          <img src={image} alt={imageAlt} />
+        )}
+      </div>
+    );
+  }
+
+  renderBlockTitle(title) {
+    if (!title) {
+      return null;
+    }
+
+    return (
+      <h2>
+        <MarkdownBlock>{title}</MarkdownBlock>
+      </h2>
+    );
+  }
+
+  render() {
+    return (
+      <div className="gridBlock">
+        {this.props.contents.map(this.renderBlock, this)}
+      </div>
+    );
+  }
+}
 
 class HomeSplash extends React.Component {
   render() {
@@ -24,22 +109,11 @@ class HomeSplash extends React.Component {
     const SplashContainer = props => (
       <div className="homeContainer">
         <div className="homeSplashFade">
-          <div className="wrapper homeWrapper">{props.children}</div>
+          <div className="wrapper homeWrapper">
+            {props.children}
+          </div>
         </div>
       </div>
-    );
-
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
-
-    const ProjectTitle = props => (
-      <h2 className="projectTitle">
-        {props.title}
-        <small>{props.tagline}</small>
-      </h2>
     );
 
     const PromoSection = props => (
@@ -47,6 +121,12 @@ class HomeSplash extends React.Component {
         <div className="promoRow">
           <div className="pluginRowBlock">{props.children}</div>
         </div>
+      </div>
+    );
+
+    const ProjectTagline = props => (
+      <div className="projectTagline">
+        {props.tagline}
       </div>
     );
 
@@ -60,24 +140,42 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
         <div className="inner">
-          <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
-          <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
-          </PromoSection>
+          <div className="row">
+            <div className="column">
+              <div className="projectDetails">
+                <ProjectTagline tagline={siteConfig.tagline} />
+                <div className="projectDescription">
+                  Metamapper is an open-source metadata management platform
+                  that aims to make it easier to share data and it's context
+                  across your organization.
+                </div>
+                <PromoSection>
+                  <Button href="/docs/metadata-management">Documentation</Button>
+                  <Button href={siteConfig.repoUrl}>Metamapper on Github</Button>
+                </PromoSection>
+              </div>
+            </div>
+            <div className="column">
+              <div className="projectImage">
+                <img src="/img/splash.png" />
+              </div>
+            </div>
+          </div>
         </div>
       </SplashContainer>
     );
   }
 }
 
+// A toolkit to document your data systems
+
 class Index extends React.Component {
   render() {
     const {config: siteConfig, language = ''} = this.props;
     const {baseUrl} = siteConfig;
+
+    const pageUrl = page => baseUrl + (language ? `${language}/` : '') + `docs/${page}`;
 
     const Block = props => (
       <Container
@@ -92,117 +190,134 @@ class Index extends React.Component {
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
+    const Datastores = () => {
+      const datastores = [
+        {
+          alt: 'SQL Server',
+          image: '/img/datastores/sqlserver.png',
+          infoLink: 'https://www.microsoft.com/en-us/sql-server/',
+        },
+        {
+          alt: 'Oracle',
+          image: '/img/datastores/oracle.png',
+          infoLink: 'https://www.oracle.com/database/',
+        },
+        {
+          alt: 'MySQL',
+          image: '/img/datastores/mysql.png',
+          infoLink: 'https://www.mysql.com/',
+        },
+        {
+          alt: 'AWS Redshift',
+          image: '/img/datastores/redshift.png',
+          infoLink: 'https://aws.amazon.com/redshift/',
+        },
+        {
+          alt: 'Snowflake',
+          image: '/img/datastores/snowflake.png',
+          infoLink: 'https://www.snowflake.com/',
+        },
+        {
+          alt: 'PostgreSQL',
+          image: '/img/datastores/postgresql.png',
+          infoLink: 'https://www.postgresql.org/',
+        },
+      ]
 
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
-          },
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
+      const showcase = datastores
         .map(user => (
           <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
+            <img src={user.image} alt={user.alt} title={user.alt} />
           </a>
         ));
 
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
       return (
         <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
+          <div className="productShowcaseInner">
+            <h2>Catalog Your Datastore</h2>
+            <p>
+              Metamapper <a href={pageUrl('metadata-management--supported-datastores')}>supports these datastores</a> and is constantly adding more.
+            </p>
+            <div className="logos">{showcase}</div>
           </div>
         </div>
       );
     };
 
+    const DataCatalogFeature = () => (
+      <Block id="feature-catalog">
+        {[
+          {
+            caption: 'Data Democratization',
+            title: 'Automatic data cataloging',
+            content: (
+              <span>
+                <p>
+                  Metamapper <a href={pageUrl('metadata-management--schema-inspection')}>crawls and compiles</a> your
+                  assets into a single comprehensive data catalog. Track data stewardship, governance, and much more.
+                </p>
+                <p>Goodbye, spreadsheets!</p>
+              </span>
+            ),
+            image: `${baseUrl}img/features/feature-1.png`,
+            imageAlign: 'right',
+          },
+        ]}
+      </Block>
+    );
+
+    const SearchFeature = () => (
+      <Block id="feature-search">
+        {[
+          {
+            caption: 'Data Discovery',
+            title: 'Supercharged search',
+            content: (
+              <span>
+                <p>
+                  Use <a href={pageUrl('metadata-management--search')}>full-text search</a> to discover
+                  data assets across all of your connected datastores in nanoseconds.
+                </p>
+                <p>It's like Google, but for your data.</p>
+              </span>
+            ),
+            image: `${baseUrl}img/features/feature-2.png`,
+            imageAlign: 'left',
+          },
+        ]}
+      </Block>
+    );
+
+    const KnowledgeFeature = () => (
+      <Block id="feature-knowledge">
+        {[
+          {
+            caption: 'Data curation',
+            title: 'Crowdsource your documentation',
+            content: (
+              <span>
+                <p>
+                  Attach notes and <a href={pageUrl('metadata-management--custom-fields')}>custom properties</a> to
+                  any data asset. Business users can explore the catalog, ask questions, and get answers you need.
+                </p>
+                <p>Metamapper is a living document of your data.</p>
+              </span>
+            ),
+            image: `${baseUrl}img/features/feature-3.png`,
+            imageAlign: 'right',
+          },
+        ]}
+      </Block>
+    );
+
     return (
-      <div>
+      <div className="home">
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <DataCatalogFeature />
+          <SearchFeature />
+          <KnowledgeFeature />
+          <Datastores />
         </div>
       </div>
     );
@@ -210,3 +325,4 @@ class Index extends React.Component {
 }
 
 module.exports = Index;
+

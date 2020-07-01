@@ -56,7 +56,7 @@ broker_url = "sqs://"
 ```
 ## Starting the Scheduler
 
-Metamapper relies on scheduled tasks to operate. For example, Metamapper inspects connected datastores every 4 hours to check for schema changes. This periodic task scheduling is handled via the scheduler process.
+Metamapper relies on scheduled tasks to operate. For example, Metamapper inspects connected datastores every hour to check for schema changes. This periodic task scheduling is handled via the scheduler process.
 
 You can start the scheduler using the following command:
 
