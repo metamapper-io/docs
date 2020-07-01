@@ -9,7 +9,7 @@ This guide covers the product, how to use it, and self-hosted Metamapper. If you
 
 ## What is Metamapper?
 
-Metamapper is an open-source metadata management platform that aims to make it easier to share data and it's context across your organization. It depends on a simple concept: data teams spend much of their time in databases, data warehouses, and data lakes.
+Metamapper is an open-source metadata management platform that aims to make it easier to share data and its context across your organization. It depends on a simple concept: data teams spend much of their time in databases, data warehouses, and data lakes.
 
 These datastores serve the source of truth for analytics within an organization. But as companies grow, so does their data. With all of this data comes a lot of noise. Teams can't communicate every aspect of their operations to each other. It becomes difficult to keep track of context around data, how "fresh" it is, and if it is even meant for you to use.
 

@@ -147,7 +147,7 @@ class HomeSplash extends React.Component {
                 <ProjectTagline tagline={siteConfig.tagline} />
                 <div className="projectDescription">
                   Metamapper is an open-source metadata management platform
-                  that aims to make it easier to share data and it's context
+                  that aims to make it easier to share data and its context
                   across your organization.
                 </div>
                 <PromoSection>
@@ -298,7 +298,7 @@ class Index extends React.Component {
               <span>
                 <p>
                   Attach notes and <a href={pageUrl('metadata-management--custom-fields')}>custom properties</a> to
-                  any data asset. Business users can explore the catalog, ask questions, and get answers you need.
+                  any data asset. Business users can explore the catalog, ask questions, and get answers.
                 </p>
                 <p>Metamapper is a living document of your data.</p>
               </span>
