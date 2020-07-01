@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Security · Metamapper</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Authentication"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Security · Metamapper"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.metamapper.io/"/><meta property="og:description" content="## Authentication"/><meta property="og:image" content="https://www.metamapper.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.metamapper.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://www.metamapper.io/blog/atom.xml" title="Metamapper Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://www.metamapper.io/blog/feed.xml" title="Metamapper Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/brand/logo.png" alt="Metamapper"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/metadata-management" target="_self">Documentation</a></li><li class=""><a href="https://discuss.metamapper.io" target="_self">Discussion</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Installation (Self-Hosted)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Metadata Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/metadata-management">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--supported-datastores">Supported Datastores</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--schema-inspection">Schema Inspection</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--custom-fields">Custom Fields</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--annotations">Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--search">Search</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Workspace Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/workspace-management">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--access-mgmt">Access Management</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-introduction">Single Sign-On (SSO)</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-google">SSO Setup: Google</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-github">SSO Setup: Github</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-saml2">SSO Setup: SAML2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation (Self-Hosted)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--configuring-metamapper">Configuring Metamapper</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--extending-metamapper">Extensions</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--asynchronous-workers">Asynchronous Workers</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--email-configuration">Email Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--file-storage">File Storage</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/installation--security">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--search">Search</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--healthchecks">Healthchecks</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Security</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="authentication"></a><a href="#authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication</h2>
+<p>Metamapper uses <a href="https://jwt.io/">JSON Web Tokens (JWT)</a> for authentication. Tokens have a default TTL of 24 hours.</p>
+<h2><a class="anchor" aria-hidden="true" id="encryption"></a><a href="#encryption" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Encryption</h2>
+<p>Sensitive information, such as database passwords and authentication tokens, are encrypted at rest using <a href="https://cryptography.io/en/latest/fernet/">Fernet</a> symmetric encryption. This guarantees that sensitive variables cannot be manipulated or read without access to the encryption secret.</p>
+<p>You define the encryption secret via the <code>METAMAPPER_FERNET_KEY</code> environment variable.</p>
+<h3><a class="anchor" aria-hidden="true" id="generating-a-fernet-key"></a><a href="#generating-a-fernet-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generating a Fernet key</h3>
+<p>If you need to generate a new fernet key you can use the following code snippet.</p>
+<pre><code class="hljs css language-python"><span class="hljs-keyword">from</span> cryptography.fernet <span class="hljs-keyword">import</span> Fernet
+fernet_key = Fernet.generate_key()
+print(fernet_key.decode())
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="rotating-encryption-keys"></a><a href="#rotating-encryption-keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rotating encryption keys</h3>
+<p>No standard support yet, but we're working on it.</p>
+<h2><a class="anchor" aria-hidden="true" id="oauth-authentication"></a><a href="#oauth-authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OAuth Authentication</h2>
+<p>Metamapper supports <a href="workspace-management--sso-introduction">single sign-on out</a> of the box for generic SAML2.0 applications. No extra configuration should be necessary – just set up your connection as suggested in <a href="workspace-management--sso-saml2">this guide</a>.</p>
+<p>If you want to enable OAuth authentication via Google and/or Github, follow the respective guide below.</p>
+<h3><a class="anchor" aria-hidden="true" id="google-setup"></a><a href="#google-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Google Setup</h3>
+<p>If you want to use Google OAuth to authenticate users, you need to issue credentials via Google Cloud Platform.</p>
+<p>First, sign into the <a href="https://console.cloud.google.com/apis/credentials?pli=1">API manager</a> and create a new project. Once you have done that, you can create a new set of OAuth credentials. You should use the &quot;Web application&quot; type and give it a recognizable name.</p>
+<p>The callback URL should be set to: <code>${METAMAPPER_WEBSERVER_ORIGIN}/oauth2/google/callback</code>.</p>
+<p><img src="/img/google-oauth-setup.png" alt="google-oauth-setup"></p>
+<p>Once created, you will have access to the client ID and client secret. Set these in your <code>.env</code> file:</p>
+<ul>
+<li><code>METAMAPPER_GOOGLE_CLIENT_ID</code> (Google OAuth Client ID)</li>
+<li><code>METAMAPPER_GOOGLE_CLIENT_SECRET</code> (Google OAuth Client Secret)</li>
+</ul>
+<p><img src="/img/google-oauth-secrets.png" alt="google-oauth-secrets"></p>
+<p>If the environment variables have been updated properly, you can go ahead and restart the webserver process (e.g, <code>docker-compose up -d webserver</code>). Once enabled, you should be able to set up a Github connection using <a href="workspace-management--sso-google">this guide</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="github-setup"></a><a href="#github-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github Setup</h3>
+<p>You will need a Github organization to set up Github OAuth to authenticate users. You will need to create an OAuth App, which can be done from your organization settings.</p>
+<p>The callback URL should be set to: <code>${METAMAPPER_WEBSERVER_ORIGIN}/oauth2/github/callback</code>.</p>
+<p><img src="/img/github-oauth-setup.png" alt="github-oauth-setup"></p>
+<p>Once created, you will have access to the client ID and client secret. Set these in your <code>.env</code> file:</p>
+<ul>
+<li><code>METAMAPPER_GITHUB_CLIENT_ID</code> (Github OAuth Client ID)</li>
+<li><code>METAMAPPER_GITHUB_CLIENT_SECRET</code> (Github OAuth Client Secret)</li>
+</ul>
+<p><img src="/img/github-oauth-secrets.png" alt="github-oauth-secrets"></p>
+<p>If the environment variables have been updated properly, you can go ahead and restart the webserver process (e.g, <code>docker-compose up -d webserver</code>). Once enabled, you should be able to set up a Github connection using <a href="workspace-management--sso-github">this guide</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/installation--file-storage"><span class="arrow-prev">← </span><span>File Storage</span></a><a class="docs-next button" href="/docs/installation--search"><span>Search</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#authentication">Authentication</a></li><li><a href="#encryption">Encryption</a><ul class="toc-headings"><li><a href="#generating-a-fernet-key">Generating a Fernet key</a></li><li><a href="#rotating-encryption-keys">Rotating encryption keys</a></li></ul></li><li><a href="#oauth-authentication">OAuth Authentication</a><ul class="toc-headings"><li><a href="#google-setup">Google Setup</a></li><li><a href="#github-setup">Github Setup</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/brand/logo-white.png" alt="Metamapper"/></a></div><div><h5>Documentation</h5><a href="/docs/metadata-management" target="_blank" rel="noreferrer noopener">User Guide</a><a href="/docs/installation" target="_blank" rel="noreferrer noopener">Installation Guide</a></div><div><h5>Community</h5><a href="https://discuss.metamapper.io" target="_blank" rel="noreferrer noopener">Discussion</a><a href="https://github.com/metamapper-io/metamapper">GitHub</a></div></section><section class="copyright">Copyright © 2020 Scott Cruwys</section></footer></div></body></html>

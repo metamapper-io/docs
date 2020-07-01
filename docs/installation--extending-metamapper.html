@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Extensions · Metamapper</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## What for?"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Extensions · Metamapper"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.metamapper.io/"/><meta property="og:description" content="## What for?"/><meta property="og:image" content="https://www.metamapper.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.metamapper.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://www.metamapper.io/blog/atom.xml" title="Metamapper Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://www.metamapper.io/blog/feed.xml" title="Metamapper Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/brand/logo.png" alt="Metamapper"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/metadata-management" target="_self">Documentation</a></li><li class=""><a href="https://discuss.metamapper.io" target="_self">Discussion</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Installation (Self-Hosted)</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Metadata Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/metadata-management">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--supported-datastores">Supported Datastores</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--schema-inspection">Schema Inspection</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--custom-fields">Custom Fields</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--annotations">Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--search">Search</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Workspace Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/workspace-management">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--access-mgmt">Access Management</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-introduction">Single Sign-On (SSO)</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-google">SSO Setup: Google</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-github">SSO Setup: Github</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-saml2">SSO Setup: SAML2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation (Self-Hosted)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--configuring-metamapper">Configuring Metamapper</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/installation--extending-metamapper">Extensions</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--asynchronous-workers">Asynchronous Workers</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--email-configuration">Email Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--file-storage">File Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--security">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--search">Search</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--healthchecks">Healthchecks</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Extensions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="what-for"></a><a href="#what-for" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What for?</h2>
+<p>Extensions are an advanced concept in Metamapper. Using extensions can be a way for you to customize Metamapper to fit your needs.</p>
+<p>Exension can be used as an easy way to adapt Metamapper to different technology stacks. We intend to support this pattern as we add new features and datastores to our catalog.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-contrib-module"></a><a href="#the-contrib-module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The <code>contrib</code> module</h3>
+<p>The <a href="https://github.com/metamapper-io/metamapper-setup">Docker bootstrap</a> syncs Metamapper with a local directory at <code>./metamapper/contrib</code>. Python code placed in this directory will be accessible to Metamapper:</p>
+<pre><code class="hljs">metamapper/
+    conf/
+    contrib/
+        __init__<span class="hljs-selector-class">.py</span>
+        backends/
+            __init__<span class="hljs-selector-class">.py</span>
+            custom_file_storage<span class="hljs-selector-class">.py</span>
+            custom_search_backend<span class="hljs-selector-class">.py</span>
+    requirements<span class="hljs-selector-class">.txt</span>
+</code></pre>
+<p>We currently expose the following backends as configurable:</p>
+<table>
+<thead>
+<tr><th>Environment Variable</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>METAMAPPER_EMAIL_BACKEND</code></td><td>Handles email notification deliveries.</td></tr>
+<tr><td><code>METAMAPPER_FILE_STORAGE_BACKEND</code></td><td>Handles file uploads to different cloud providers.</td></tr>
+<tr><td><code>METAMAPPER_SEARCH_BACKEND</code></td><td>Handles searching data assets (such as tables) and their annotations.</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>We have plans to support inspectors as extensions so that you can easily roll out datastores that we do not support by default, such as BigQuery or Vertica. However, this feature is not yet available.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h2>
+<p>See <a href="installation--search#rolling-your-own-search-backend">Rolling Your Own Search Backend</a> for a brief example on adding an extension.</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-extra-dependencies"></a><a href="#installing-extra-dependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Extra Dependencies</h2>
+<p>When you build the bootstrap, it will install any dependencies found in the <a href="https://github.com/metamapper-io/metamapper-setup/blob/57dc904a28a0cf464b6ac7594f229b6ea4db6a49/Dockerfile#L8">requirements.txt</a> found in the <code>metamapper</code> directory of the bootstrap.</p>
+<p>You can also update the <a href="https://github.com/metamapper-io/metamapper-setup/blob/master/Dockerfile">Dockerfile</a> to install any Linux dependencies, etc.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/installation--configuring-metamapper"><span class="arrow-prev">← </span><span>Configuring Metamapper</span></a><a class="docs-next button" href="/docs/installation--asynchronous-workers"><span>Asynchronous Workers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-for">What for?</a><ul class="toc-headings"><li><a href="#the-contrib-module">The <code>contrib</code> module</a></li></ul></li><li><a href="#example">Example</a></li><li><a href="#installing-extra-dependencies">Installing Extra Dependencies</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/brand/logo-white.png" alt="Metamapper"/></a></div><div><h5>Documentation</h5><a href="/docs/metadata-management" target="_blank" rel="noreferrer noopener">User Guide</a><a href="/docs/installation" target="_blank" rel="noreferrer noopener">Installation Guide</a></div><div><h5>Community</h5><a href="https://discuss.metamapper.io" target="_blank" rel="noreferrer noopener">Discussion</a><a href="https://github.com/metamapper-io/metamapper">GitHub</a></div></section><section class="copyright">Copyright © 2020 Scott Cruwys</section></footer></div></body></html>

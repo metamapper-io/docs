@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Custom Fields · Metamapper</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Metamapper comes with a highly customizable approach to managing your metadata. Every organization manages their data differently, which is why we provided the **Custom Field** feature."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Custom Fields · Metamapper"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.metamapper.io/"/><meta property="og:description" content="Metamapper comes with a highly customizable approach to managing your metadata. Every organization manages their data differently, which is why we provided the **Custom Field** feature."/><meta property="og:image" content="https://www.metamapper.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.metamapper.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://www.metamapper.io/blog/atom.xml" title="Metamapper Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://www.metamapper.io/blog/feed.xml" title="Metamapper Blog RSS Feed"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/brand/logo.png" alt="Metamapper"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/metadata-management" target="_self">Documentation</a></li><li class=""><a href="https://discuss.metamapper.io" target="_self">Discussion</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Metadata Management</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Metadata Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/metadata-management">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--supported-datastores">Supported Datastores</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--schema-inspection">Schema Inspection</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/metadata-management--custom-fields">Custom Fields</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--annotations">Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--search">Search</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Workspace Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/workspace-management">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--access-mgmt">Access Management</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-introduction">Single Sign-On (SSO)</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-google">SSO Setup: Google</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-github">SSO Setup: Github</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-saml2">SSO Setup: SAML2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation (Self-Hosted)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--configuring-metamapper">Configuring Metamapper</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--extending-metamapper">Extensions</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--asynchronous-workers">Asynchronous Workers</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--email-configuration">Email Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--file-storage">File Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--security">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--search">Search</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--healthchecks">Healthchecks</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Custom Fields</h1></header><article><div><span><p>Metamapper comes with a highly customizable approach to managing your metadata. Every organization manages their data differently, which is why we provided the <strong>Custom Field</strong> feature.</p>
+<p>With a custom field, you will have the ability to document specific information about your data. You will also be able to organize and filter based on these fields in Metamapper.</p>
+<p>Some example use cases:</p>
+<ul>
+<li>Recording the person most knowledgeable about a data asset</li>
+<li>Recording a data privacy classification</li>
+<li>Reference to the ETL that populated the table</li>
+<li>Reference to how often a table is updated</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="creating-a-custom-field"></a><a href="#creating-a-custom-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a custom field</h2>
+<p>You can add a custom field by going to <strong>Workspace Settings &gt; Custom Fields</strong> and clicking on <strong>Add custom field</strong>. The field can be scoped to either <a href="metadata-management--schema-inspection#datastores">datastores</a> or <a href="metadata-management--schema-inspection#tables">tables</a>.</p>
+<p>There are three types of custom fields:</p>
+<ul>
+<li><strong>Text</strong> - Just a basic free-text field. We will automatically urlify any hyperlinks.</li>
+<li><strong>Enum</strong> - This is a single choice field where you pre-define the selectable options.</li>
+<li><strong>User</strong> - Any user in your workspace. If the user is removed from the workspace, we null this field.</li>
+</ul>
+<p><img src="/img/guides/custom-field-create.png" alt="custom-field-create"></p>
+<h2><a class="anchor" aria-hidden="true" id="viewing-a-custom-field"></a><a href="#viewing-a-custom-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Viewing a custom field</h2>
+<p>Once the custom field has been created, you can view or edit field values in the following places within Metamapper. To edit the values, click the <strong>Edit</strong> icon in the top right corner of the <strong>Properties</strong> card.</p>
+<p>In the <strong>Datastore Overview</strong>:</p>
+<p><img src="/img/guides/custom-field-datastore.png" alt="custom-field-datastore"></p>
+<p>In the <strong>Table Overview</strong>:</p>
+<p><img src="/img/guides/custom-field-table.png" alt="custom-field-table"></p>
+<h2><a class="anchor" aria-hidden="true" id="hiding-a-custom-field"></a><a href="#hiding-a-custom-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hiding a custom field</h2>
+<p>Custom fields are scoped to the workspace, which means they are available on every datastore by default.</p>
+<p>Metamapper allows you to exclude specific custom fields as a datastore setting. You can do this by navigating to the Datastore Settings page, unchecking the custom fields you want to hide on that specific datastore, and click <strong>Save Changes</strong>.</p>
+<p><img src="/img/guides/custom-field-hidden.png" alt="custom-field-hidden"></p>
+<h2><a class="anchor" aria-hidden="true" id="updating-a-custom-field"></a><a href="#updating-a-custom-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Updating a custom field</h2>
+<p>You can update certain aspects of a custom field by going to <strong>Workspace Settings &gt; Custom Fields</strong> and clicking the <strong>Edit</strong> button next to the corresponding custom field.</p>
+<p>Custom field attributes that cannot be edited, such as the field type, will be disabled.</p>
+<h2><a class="anchor" aria-hidden="true" id="removing-a-custom-field"></a><a href="#removing-a-custom-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Removing a custom field</h2>
+<p>You can add a custom field by going to <strong>Workspace Settings &gt; Custom Fields</strong> and clicking the <strong>Delete</strong> button next to the corresponding custom field.</p>
+<blockquote>
+<p>Deleting your custom field will delete the field and all of it's existing data from your Metamapper workspace.</p>
+</blockquote>
+<p><img src="/img/guides/custom-field-delete.png" alt="custom-field-delete"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/metadata-management--schema-inspection"><span class="arrow-prev">← </span><span>Schema Inspection</span></a><a class="docs-next button" href="/docs/metadata-management--annotations"><span>Annotations</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-a-custom-field">Creating a custom field</a></li><li><a href="#viewing-a-custom-field">Viewing a custom field</a></li><li><a href="#hiding-a-custom-field">Hiding a custom field</a></li><li><a href="#updating-a-custom-field">Updating a custom field</a></li><li><a href="#removing-a-custom-field">Removing a custom field</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/brand/logo-white.png" alt="Metamapper"/></a></div><div><h5>Documentation</h5><a href="/docs/metadata-management" target="_blank" rel="noreferrer noopener">User Guide</a><a href="/docs/installation" target="_blank" rel="noreferrer noopener">Installation Guide</a></div><div><h5>Community</h5><a href="https://discuss.metamapper.io" target="_blank" rel="noreferrer noopener">Discussion</a><a href="https://github.com/metamapper-io/metamapper">GitHub</a></div></section><section class="copyright">Copyright © 2020 Scott Cruwys</section></footer></div></body></html>
