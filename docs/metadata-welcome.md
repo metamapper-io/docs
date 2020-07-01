@@ -33,5 +33,5 @@ Here are some links and guides to get you started:
 
 - Installing Metamapper? See the [Installation](installation) guide.
 - Just started using to Metamapper? This [guide](metadata-management--getting-started) is a good place to start.
-- Stuck? Ask a question on the [discussion board](https://discuss.metamapper.io).
+- Stuck? Ask a question on the [discussion board](http://discuss.metamapper.io).
 - Looking to contribute to Metamapper? Read the [CONTRIBUTING.md](https://github.com/metamapper-io/metamapper/blob/master/CONTRIBUTING.md).
