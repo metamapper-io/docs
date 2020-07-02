@@ -9,7 +9,7 @@ jobs:
           name: Configure Git
           command: |
             git config --global user.name  "$GITHUB_USERNAME"
-            git config --global user.email "$GITHUB_EMAI"
+            git config --global user.email "$GITHUB_EMAIL"
       - run:
           name: Deploying to GitHub Pages
           command: |
@@ -20,7 +20,6 @@ workflows:
     jobs:
       - deploy-gh-pages:
           context: github
-          filters:
-            branches:
-              only:
-                - master
+    branches:
+      only:
+        - master
