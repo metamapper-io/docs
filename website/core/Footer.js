@@ -53,7 +53,7 @@ class Footer extends React.Component {
           <div>
             <h5>Community</h5>
             <a
-              href="https://discuss.metamapper.io"
+              href="http://discuss.metamapper.io"
               target="_blank"
               rel="noreferrer noopener">
               Discussion

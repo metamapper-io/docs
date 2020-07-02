@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 jobs:
-  deploy-website:
+  deploy-gh-pages:
     docker:
-      - image: circleci/node:8.11.1
+      - image: circleci/node:12
     steps:
       - checkout
       - run:
@@ -19,8 +19,8 @@ workflows:
   pipeline:
     jobs:
       - deploy-gh-pages:
-        context: github
-        filters:
-          branches:
-            only:
-              - master
+          context: github
+          filters:
+            branches:
+              only:
+                - master
