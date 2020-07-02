@@ -8,13 +8,13 @@ jobs:
       - run:
           name: Configure Git
           command: |
-            git config --global user.name  "<GITHUB_USERNAME>"
-            git config --global user.email "<GITHUB_EMAIL>"
+            git config --global user.name  "$GITHUB_USERNAME"
+            git config --global user.email "$GITHUB_EMAI"
       - run:
           name: Deploying to GitHub Pages
           command: |
-            echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
-            cd website && yarn install && GIT_USER=<GIT_USER> yarn run publish-gh-pages
+            echo "machine github.com login $GITHUB_USERNAME password $GITHUB_TOKEN" > ~/.netrc
+            cd website && yarn install && yarn run publish-gh-pages
 workflows:
   pipeline:
     jobs:
