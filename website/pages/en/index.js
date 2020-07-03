@@ -146,7 +146,7 @@ class HomeSplash extends React.Component {
               <div className="projectDetails">
                 <ProjectTagline tagline={siteConfig.tagline} />
                 <div className="projectDescription">
-                  Metamapper is an open-source metadata management platform
+                  Metamapper is a free &amp; open-source metadata management platform
                   that aims to make it easier to share data and its context
                   across your organization.
                 </div>
