@@ -42,7 +42,7 @@ const siteConfig = {
     },
     {
       href: repoUrl,
-      label: 'Discussion',
+      label: 'Github',
     },
   ],
 
