@@ -36,6 +36,13 @@ body {
     background: #FFFFFF;
     color: #f7777B;
 }
+.github-buttons span,
+.projectDetails .button:first-child {
+    margin-right: 5px;
+}
+.github-buttons {
+    display: none
+}
 .projectTagline {
     color: #FFFFFF;
     font-size: 42px;
@@ -173,6 +180,9 @@ img[alt="saml2-auth0-settings"] {
     .mainContainer {
         padding-bottom: 0;
     }
+    .projectDescription {
+        width: 100%;
+    }
     .homeContainer .homeSplashFade {
         padding: 0 12px;
     }
@@ -232,6 +242,9 @@ img[alt="saml2-auth0-settings"] {
         padding-top: 100px;
     }
     .productShowcaseInner p {
+        padding: 0.8em;
+    }
+    .productShowcaseSection h2 {
         padding: 0.8em;
     }
     .postContainer .posts {

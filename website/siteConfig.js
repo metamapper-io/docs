@@ -8,6 +8,8 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
+const repoUrl = 'https://github.com/getmetamapper/metamapper'
+
 const siteConfig = {
   title: 'Metamapper', // Title for your website.
   tagline: 'The modern toolkit for data teams',
@@ -37,6 +39,10 @@ const siteConfig = {
     {
       blog: true,
       label: 'Blog',
+    },
+    {
+      href: repoUrl,
+      label: 'Discussion',
     },
   ],
 
@@ -92,7 +98,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/getmetamapper/metamapper',
+  repoUrl: repoUrl,
 };
 
 module.exports = siteConfig;

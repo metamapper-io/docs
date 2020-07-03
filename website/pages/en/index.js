@@ -154,6 +154,26 @@ class HomeSplash extends React.Component {
                   <Button href="/docs/metadata-management">Documentation</Button>
                   <Button href={siteConfig.repoUrl}>Metamapper on Github</Button>
                 </PromoSection>
+                <div className="github-buttons">
+                  <a
+                    className="github-button"
+                    href="https://github.com/getmetamapper/metamapper"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Star getmetamapper/metamapper on GitHub"
+                  >
+                    Star
+                  </a>
+                  <a
+                    className="github-button"
+                    href="https://github.com/getmetamapper/metamapper/subscription"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Watch getmetamapper/metamapper on GitHub"
+                  >
+                    Watch
+                  </a>
+                </div>
               </div>
             </div>
             <div className="column">
@@ -234,7 +254,7 @@ class Index extends React.Component {
       return (
         <div className="productShowcaseSection paddingBottom">
           <div className="productShowcaseInner">
-            <h2>Catalog Your Datastore</h2>
+            <h2>Supported Datastores</h2>
             <p>
               Metamapper <a href={pageUrl('metadata-management--supported-datastores')}>supports these datastores</a> and is constantly adding more.
             </p>
