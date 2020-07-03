@@ -86,6 +86,8 @@ const siteConfig = {
   // No .html extensions for paths.
   cleanUrl: true,
 
+  gaTrackingId: 'UA-171539836-1',
+
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
   // docsSideNavCollapsible: true,
