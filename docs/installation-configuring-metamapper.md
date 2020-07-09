@@ -7,7 +7,7 @@ We understand the need to customize certain aspects of Metamapper for your own p
 
 ## Environment Variables
 
-Many aspects of Metamapper are configured via environment variables. These are read into the [settings](https://github.com/metamapper-io/metamapper/blob/master/metamapper/settings.py) module, which flows through to the rest of the application.
+Many aspects of Metamapper are configured via environment variables. These are read into the [settings](https://github.com/getmetamapper/metamapper/blob/master/metamapper/settings.py) module, which flows through to the rest of the application.
 
 The following is a list of settings and what they control:
 
@@ -46,11 +46,11 @@ The following is a list of settings and what they control:
 
 ## Advanced Configuration
 
-If you are using the recommended [bootstrap](https://github.com/metamapper-io/metamapper-setup) for Metamapper, you have granular controls over your configuration via Python modules. We accomplish this by [overwriting the default configuration files](https://github.com/metamapper-io/metamapper-setup/blob/master/Dockerfile#L5) with ones that you provide.
+If you are using the recommended [bootstrap](https://github.com/getmetamapper/metamapper-setup) for Metamapper, you have granular controls over your configuration via Python modules. We accomplish this by [overwriting the default configuration files](https://github.com/getmetamapper/metamapper-setup/blob/master/Dockerfile#L5) with ones that you provide.
 
-For example, Metamapper defaults to a very simple [gunicorn configuration](https://github.com/metamapper-io/metamapper/blob/master/metamapper/conf/gunicorn.py) to manage web requests. The Docker setup exposes the gunicorn configuration as a Python module, which let's you customize settings such as timeouts, [worker class type](https://docs.gunicorn.org/en/stable/settings.html#worker-class), and much more.
+For example, Metamapper defaults to a very simple [gunicorn configuration](https://github.com/getmetamapper/metamapper/blob/master/metamapper/conf/gunicorn.py) to manage web requests. The Docker setup exposes the gunicorn configuration as a Python module, which let's you customize settings such as timeouts, [worker class type](https://docs.gunicorn.org/en/stable/settings.html#worker-class), and much more.
 
-> Configuration overrides are placed in the [conf](https://github.com/metamapper-io/metamapper-setup/tree/master/metamapper/conf) directory.
+> Configuration overrides are placed in the [conf](https://github.com/getmetamapper/metamapper-setup/tree/master/metamapper/conf) directory.
 
 ### Celery
 
@@ -58,7 +58,7 @@ For example, Metamapper defaults to a very simple [gunicorn configuration](https
 
 **Default:** `metamapper.conf.celery`
 
-The bootstrap provides a [default Celery configuration](https://github.com/metamapper-io/metamapper-setup/blob/master/config_templates/celery.default.py) to get you started. You can manually override this module by setting the `METAMAPPER_CELERY_CONFIG_MODULE` to any importable module.
+The bootstrap provides a [default Celery configuration](https://github.com/getmetamapper/metamapper-setup/blob/master/config_templates/celery.default.py) to get you started. You can manually override this module by setting the `METAMAPPER_CELERY_CONFIG_MODULE` to any importable module.
 
 For example, if the following file (that you created) is accessible via the `PYTHONPATH`:
 
@@ -96,7 +96,7 @@ Environment Variable: `METAMAPPER_GUNICORN_CONFIG_PATH`
 
 Default: `./metamapper/conf/gunicorn.py`
 
-You can override the default [gunicorn configuration](https://github.com/metamapper-io/metamapper-setup/blob/master/config_templates/gunicorn.default.py) in a similar way. The only difference is that you just need to provide a path to a Python file. It does not need to be an importable module.
+You can override the default [gunicorn configuration](https://github.com/getmetamapper/metamapper-setup/blob/master/config_templates/gunicorn.default.py) in a similar way. The only difference is that you just need to provide a path to a Python file. It does not need to be an importable module.
 
 ```bash
 METAMAPPER_GUNICORN_CONFIG_PATH='/opt/conf/custom_gunicorn.py'
@@ -112,7 +112,7 @@ You can read more about configuring Gunicorn via [it's documentation](https://do
 
 **Default:** `None`
 
-Metamapper handles a serious amount of configuration using the [django.conf.settings](https://github.com/metamapper-io/metamapper/blob/master/metamapper/settings.py) module. You can override virtually any setting this file by referencing an importable module using the `METAMAPPER_SETTINGS_OVERRIDE_MODULE` environment variable.
+Metamapper handles a serious amount of configuration using the [django.conf.settings](https://github.com/getmetamapper/metamapper/blob/master/metamapper/settings.py) module. You can override virtually any setting this file by referencing an importable module using the `METAMAPPER_SETTINGS_OVERRIDE_MODULE` environment variable.
 
 > Unlike the other overrides mentioned above, this strategy will only override settings that you provide.
 

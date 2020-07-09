@@ -16,12 +16,6 @@ const siteConfig = {
   url: 'https://www.metamapper.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
 
-  algolia: {
-    apiKey: '7c7e25618fc3c983dfb3e09f1844b998',
-    indexName: 'prod_documentation',
-    algoliaOptions: {} // Optional, if provided by Algolia
-  },
-
   // Used for publishing and more
   projectName: 'documentation',
 
