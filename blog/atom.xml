@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.metamapper.io/blog</id>
     <title>Metamapper Blog</title>
-    <updated>2020-07-09T06:00:00.000Z</updated>
+    <updated>2020-07-12T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.metamapper.io/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Metamapper news and events.</subtitle>
@@ -10,13 +10,12 @@
     <rights>Copyright © 2020 Scott Cruwys</rights>
     <entry>
         <title type="html"><![CDATA[Introducing Metamapper]]></title>
-        <id>https://www.metamapper.io/blog/2020/07/09/introducting-metamapper.html</id>
-        <link href="https://www.metamapper.io/blog/2020/07/09/introducting-metamapper.html"/>
-        <updated>2020-07-09T06:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>Coming soon...</p> ]]></summary>
+        <id>https://www.metamapper.io/blog/2020/07/12/introducting-metamapper.html</id>
+        <link href="https://www.metamapper.io/blog/2020/07/12/introducting-metamapper.html"/>
+        <updated>2020-07-12T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>Growing organizations rely heavily on data and analytics to drive decisions.</p> <p>Luckily, it's never been easier to get data into your warehouse. The emergence of frameworks like <a href="https://airflow.apache.org/docs/">Apache Airflow</a> and <a href="https://github.com/spotify/luigi">Luigi</a> make it easier than ever to write custom pipelines...</p>]]></summary>
         <author>
             <name>Scott Cruwys</name>
-            <email/>
             <uri>https://github.com/scruwys</uri>
         </author>
     </entry>
