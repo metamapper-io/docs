@@ -25,9 +25,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { search: true },
     {
       doc: 'metadata-management',
+      href: '/docs',
       label: 'Documentation',
     },
     {
