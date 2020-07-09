@@ -154,6 +154,24 @@ body {
 .post-content p {
     line-height: 30px;
 }
+input#search_input_react,
+input#search_input_react:active,
+input#search_input_react:focus {
+    background: #606060;
+}
+.aa-dropdown-menu {
+    border: 1px solid transparent !important;
+}
+.algolia-docsearch-suggestion .algolia-docsearch-suggestion--category-header {
+    border-top: 0 !important;
+}
+.aa-cursor .algolia-docsearch-suggestion--content {
+  color: #f7777B !important;
+}
+.aa-cursor .algolia-docsearch-suggestion {
+  background: #ebebfb;
+}
+
 img[alt="github-oauth-setup"] {
     width: 650px;
 }
@@ -192,12 +210,37 @@ img[alt="saml2-auth0-settings"] {
     .navigationSlider .slidingNav ul li {
         margin-left: initial;
     }
-    .fixedHeaderContainer header img {
-        height: initial;
-        margin: 0;
+    .fixedHeaderContainer {
+        margin-top: 10px;
+        padding: 16px 0;
     }
-    .headerWrapper {
-        margin: 18px 120px 9px 120px;
+    .fixedHeaderContainer header img {
+        margin: 0;
+        width: 150px;
+        height: 18px;
+    }
+    .navSearchWrapper.reactNavSearchWrapper {
+        padding-right: 10px;
+    }
+    .reactNavSearchWrapper input#search_input_react,
+    .reactNavSearchWrapper input#search_input_react:active,
+    .reactNavSearchWrapper input#search_input_react:focus {
+        background: #606060;
+    }
+    .aa-dropdown-menu {
+        border: 1px solid transparent !important;
+    }
+    .algolia-docsearch-suggestion .algolia-docsearch-suggestion--category-header {
+        border-top: 0 !important;
+    }
+    .aa-cursor .algolia-docsearch-suggestion--content {
+        color: #f7777B !important;
+    }
+    .aa-cursor .algolia-docsearch-suggestion {
+        background: #ebebfb;
+    }
+    .docsContainer .wrapper {
+        padding-top: 24px;
     }
     .imageAlignSide .blockContent {
         display: block;

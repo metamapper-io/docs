@@ -21,7 +21,7 @@ Metamapper supports the following providers (click the link to go to it's setup 
 
 Metamapper uses just-in-time provisioning – when a user signs in via SSO, an account will be automatically created if it does not already exist. Note that you can connect multiple third-party providers to the same email address.
 
-You can choose the default workspace [permission level](tbd) you wish to grant provisioned users when you set up each individual connection. We suggest setting this to minimal access (readonly) but allow you to customize this based on your use case.
+You can choose the default workspace [permission level](workspace-management--access-mgmt#permissions) you wish to grant provisioned users when you set up each individual connection. We suggest setting this to minimal access (readonly) but allow you to customize this based on your use case.
 
 ## Domain Verification
 

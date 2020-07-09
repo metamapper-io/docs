@@ -1,0 +1,14 @@
+{
+  "name": "metamapper-docs-sitemapper",
+  "version": "1.0.0",
+  "description": "Generate sitemap for www.metamapper.io",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Cruwys",
+  "license": "ISC",
+  "dependencies": {
+    "sitemap-generator": "^8.5.0"
+  }
+}

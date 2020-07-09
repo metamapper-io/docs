@@ -16,6 +16,12 @@ const siteConfig = {
   url: 'https://www.metamapper.io', // Your website URL
   baseUrl: '/', // Base URL for your project */
 
+  algolia: {
+    apiKey: 'f9c9d9ae74b48def75d41abe3997200e',
+    indexName: 'metamapper',
+    algoliaOptions: {} // Optional, if provided by Algolia
+  },
+
   // Used for publishing and more
   projectName: 'documentation',
 
@@ -25,6 +31,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    { search: true },
     {
       doc: 'metadata-management',
       href: '/docs',
