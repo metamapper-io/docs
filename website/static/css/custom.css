@@ -151,6 +151,9 @@ body {
 .nav-footer .sitemap .nav-home {
     width: 250px;
 }
+.post-content p {
+    line-height: 30px;
+}
 img[alt="github-oauth-setup"] {
     width: 650px;
 }

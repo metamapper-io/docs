@@ -15,7 +15,7 @@ Metamapper provides a [Docker image via Dockerhub](https://hub.docker.com/r/meta
 
 ## Official Boostrap
 
-We maintain a [repository](https://github.com/metamapper-io/metamapper-setup) for bootstraping an instance of Metamapper. This is the recommend installation method.
+We maintain a [repository](https://github.com/getmetamapper/metamapper-setup) for bootstraping an instance of Metamapper. This is the recommend installation method.
 
 > Note that the bootstrap requires [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) to work.
 
@@ -41,7 +41,7 @@ You can see an overview of the architecture in the diagram below.
 
 ### Services
 
-Metamapper requires three separate services to operate. Commands to spin up these services are accessible via the [docker-entrypoint](https://github.com/metamapper-io/metamapper/blob/master/bin/docker-entrypoint).
+Metamapper requires three separate services to operate. Commands to spin up these services are accessible via the [docker-entrypoint](https://github.com/getmetamapper/metamapper/blob/master/bin/docker-entrypoint).
 
 These processes all need to be run as a persistent services in your production environment.
 
@@ -82,7 +82,7 @@ Metamapper has two primary external dependencies:
 - PostgreSQL database (version 9.6 or later)
 - Message broker that is [compatible with Celery](https://docs.celeryproject.org/en/latest/getting-started/brokers/)
 
-These dependencies are included in the [docker-compose.yml](https://github.com/metamapper-io/metamapper-setup/blob/master/docker-compose.yml) of the bootstrap. However, we strongly encourage you to use managed services, such as [Amazon RDS](https://aws.amazon.com/rds/) or [Google Cloud SQL](https://cloud.google.com/sql), when deploying Metamapper to your production environment.
+These dependencies are included in the [docker-compose.yml](https://github.com/getmetamapper/metamapper-setup/blob/master/docker-compose.yml) of the bootstrap. However, we strongly encourage you to use managed services, such as [Amazon RDS](https://aws.amazon.com/rds/) or [Google Cloud SQL](https://cloud.google.com/sql), when deploying Metamapper to your production environment.
 
 ### Environment Variables
 

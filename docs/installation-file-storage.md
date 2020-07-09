@@ -7,7 +7,7 @@ Metamapper leverages the [django-storages](https://django-storages.readthedocs.i
 
 [django-storages](https://django-storages.readthedocs.io/en/latest/) is an extension of the Django [File storage API](https://docs.djangoproject.com/en/2.2/ref/files/storage/), which means it is possible to roll your own backend (e.g., Azure Blob Storage, etc.) as long as it conforms to the same interface.
 
-All interactions with blob storage in Metamapper go through the [blob.py](https://github.com/metamapper-io/metamapper/blob/master/utils/blob.py) utility package.
+All interactions with blob storage in Metamapper go through the [blob.py](https://github.com/getmetamapper/metamapper/blob/master/utils/blob.py) utility package.
 
 ## Setting the File Storage Backend
 

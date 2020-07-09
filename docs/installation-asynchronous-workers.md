@@ -15,7 +15,7 @@ Workers can be started like any other Celery application:
 $ celery worker --app metamapper -l info
 ```
 
-If you installed Metamapper using the [suggested Docker setup](https://github.com/metamapper-io/metamapper-setup), this is synonymous to running the following [docker-entrypoint](https://github.com/metamapper-io/metamapper/blob/master/bin/docker-entrypoint) command:
+If you installed Metamapper using the [suggested Docker setup](https://github.com/getmetamapper/metamapper-setup), this is synonymous to running the following [docker-entrypoint](https://github.com/getmetamapper/metamapper/blob/master/bin/docker-entrypoint) command:
 
 ```bash
 $ docker run --env-file .env metamapper/metamapper:latest worker
@@ -64,7 +64,7 @@ You can start the scheduler using the following command:
 $ celery beat --app metamapper -l info
 ```
 
-If you installed Metamapper using the [suggested Docker setup](https://github.com/metamapper-io/metamapper-setup), this is synonymous to running the following [docker-entrypoint](https://github.com/metamapper-io/metamapper/blob/master/bin/docker-entrypoint) command:
+If you installed Metamapper using the [suggested Docker setup](https://github.com/getmetamapper/metamapper-setup), this is synonymous to running the following [docker-entrypoint](https://github.com/getmetamapper/metamapper/blob/master/bin/docker-entrypoint) command:
 
 ```bash
 $ docker run --env-file .env metamapper/metamapper:latest scheduler

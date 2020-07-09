@@ -11,7 +11,7 @@ Exension can be used as an easy way to adapt Metamapper to different technology 
 
 ### The `contrib` module
 
-The [Docker bootstrap](https://github.com/metamapper-io/metamapper-setup) syncs Metamapper with a local directory at `./metamapper/contrib`. Python code placed in this directory will be accessible to Metamapper:
+The [Docker bootstrap](https://github.com/getmetamapper/metamapper-setup) syncs Metamapper with a local directory at `./metamapper/contrib`. Python code placed in this directory will be accessible to Metamapper:
 
 ```
 metamapper/
@@ -41,6 +41,6 @@ See [Rolling Your Own Search Backend](installation--search#rolling-your-own-sear
 
 ## Installing Extra Dependencies
 
-When you build the bootstrap, it will install any dependencies found in the [requirements.txt](https://github.com/metamapper-io/metamapper-setup/blob/57dc904a28a0cf464b6ac7594f229b6ea4db6a49/Dockerfile#L8) found in the `metamapper` directory of the bootstrap.
+When you build the bootstrap, it will install any dependencies found in the [requirements.txt](https://github.com/getmetamapper/metamapper-setup/blob/57dc904a28a0cf464b6ac7594f229b6ea4db6a49/Dockerfile#L8) found in the `metamapper` directory of the bootstrap.
 
-You can also update the [Dockerfile](https://github.com/metamapper-io/metamapper-setup/blob/master/Dockerfile) to install any Linux dependencies, etc.
+You can also update the [Dockerfile](https://github.com/getmetamapper/metamapper-setup/blob/master/Dockerfile) to install any Linux dependencies, etc.
