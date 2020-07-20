@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>SSH Tunnels · Metamapper</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="If it is not possible to connect directly to your database (e.g., it sits in a private network), you can connect to Metamapper via a SSH tunnel."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="SSH Tunnels · Metamapper"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.metamapper.io/"/><meta property="og:description" content="If it is not possible to connect directly to your database (e.g., it sits in a private network), you can connect to Metamapper via a SSH tunnel."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://www.metamapper.io/blog/atom.xml" title="Metamapper Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://www.metamapper.io/blog/feed.xml" title="Metamapper Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-171539836-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/brand/logo.png" alt="Metamapper"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class="siteNavGroupActive"><a href="/docs/metadata-management" target="_self">Documentation</a></li><li class=""><a href="http://discuss.metamapper.io" target="_self">Discussion</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/getmetamapper/metamapper" target="_self">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Metadata Management</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Metadata Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/metadata-management">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--supported-datastores">Supported Datastores</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--schema-inspection">Schema Inspection</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/metadata-management--ssh-tunnels">SSH Tunnels</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--custom-fields">Custom Fields</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--annotations">Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--search">Search</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Workspace Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/workspace-management">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--access-mgmt">Access Management</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-introduction">Single Sign-On (SSO)</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-google">SSO Setup: Google</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-github">SSO Setup: Github</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-saml2">SSO Setup: SAML2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation (Self-Hosted)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--configuring-metamapper">Configuring Metamapper</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--extending-metamapper">Extensions</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--asynchronous-workers">Asynchronous Workers</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--email-configuration">Email Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--file-storage">File Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--security">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--search">Search</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--healthchecks">Healthchecks</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">SSH Tunnels</h1></header><article><div><span><p>If it is not possible to connect directly to your database (e.g., it sits in a private network), you can connect to Metamapper via a SSH tunnel.</p>
+<p>To connect via an SSH tunnel, you need to setup an SSH tunnel server (sometimes referred to as a bastion host) that has access to your database port. Bastion hosts are servers that sit within your public subnet and act as a &quot;jump&quot; server, allowing you to use SSH to login to other instances in a private subnet.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-ssh-user"></a><a href="#create-ssh-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create SSH user</h3>
+<p>We recommend creating a separate SSH user specifically for your Metamapper instance. Login to your SSH tunnel server and run the following commands:</p>
+<p>Create group <code>metamapper</code>:</p>
+<pre><code class="hljs css language-bash">sudo groupadd metamapper
+</code></pre>
+<p>Create user <code>metamapper</code> and add it to the <code>metamapper</code> group:</p>
+<pre><code class="hljs css language-bash">sudo useradd -m -g metamapper metamapper
+</code></pre>
+<p>Switch to the <code>metamapper</code> user:</p>
+<pre><code class="hljs css language-bash">sudo su - metamapper
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="add-ssh-keys"></a><a href="#add-ssh-keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add SSH keys</h3>
+<p>Metamapper authenticates against your bastion host using public/private SSH key pairs. This section walks through how to properly configure your keys within your bastion host.</p>
+<p>First, create the <code>.ssh</code> directory (if it does not exist):</p>
+<pre><code class="hljs css language-bash">mkdir ~/.ssh
+</code></pre>
+<p>Set permissions on the directory. This means the <code>metamapper</code> user can read, can write and can execute commands against this directory.</p>
+<pre><code class="hljs css language-bash">chmod 700 ~/.ssh
+</code></pre>
+<p>Create the <code>authorized_keys</code> file. This will contain public SSH keys that are allowed access to the host.</p>
+<pre><code class="hljs css language-bash">touch ~/.ssh/authorized_keys
+</code></pre>
+<p>Set permissions on the <code>authorized_key</code> file. This means the <code>metamapper</code> user can read and can write to this file as needed.</p>
+<pre><code class="hljs css language-bash">chmod 600 authorized_keys
+</code></pre>
+<p>You will need to add the public SSH key from the datatore settings page in Metamapper to the <code>authorized_keys</code> file. This public SSH key is generated uniquely for each Metamapper workspace, so you should only need to do this once per workspace.</p>
+<p><img src="/img/guides/ssh-tunnel-pkey.png" alt="ssh-tunnel-pkey"></p>
+<h3><a class="anchor" aria-hidden="true" id="allow-port-access"></a><a href="#allow-port-access" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Allow port access</h3>
+<p>Once the user is created, you'll need to allow port access. You should be able to do this using your cloud provider, whether it be using their web UI or a technology like Terraform.</p>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html">This guide</a> is a good example of how to open up ports on an Amazon EC2 instance.</p>
+<h3><a class="anchor" aria-hidden="true" id="updating-your-connection-settings"></a><a href="#updating-your-connection-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Updating your connection settings</h3>
+<p>Once the above steps are completed, you can update the datastore connection to use SSH tunneling to connect to the datastore. Metamapper will confirm that our client can connect to your database before we commit your changes.</p>
+<p><img src="/img/guides/ssh-tunnel-setup.png" alt="ssh-tunnel-setup"></p>
+<blockquote>
+<p>This feature (and guide) was heavily influenced connection options provided by <a href="https://fivetran.com/docs/databases/connection-options">Fivetran</a>. Kudos!</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/metadata-management--schema-inspection"><span class="arrow-prev">← </span><span>Schema Inspection</span></a><a class="docs-next button" href="/docs/metadata-management--custom-fields"><span>Custom Fields</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/brand/logo-white.png" alt="Metamapper"/></a></div><div><h5>Documentation</h5><a href="/docs/metadata-management" target="_blank" rel="noreferrer noopener">User Guide</a><a href="/docs/installation" target="_blank" rel="noreferrer noopener">Installation Guide</a></div><div><h5>Community</h5><a href="http://discuss.metamapper.io" target="_blank" rel="noreferrer noopener">Discussion</a><a href="https://github.com/getmetamapper/metamapper">GitHub</a></div></section><section class="copyright">Copyright © 2020 Scott Cruwys</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f9c9d9ae74b48def75d41abe3997200e',
+                indexName: 'metamapper',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
