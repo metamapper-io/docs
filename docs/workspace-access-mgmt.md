@@ -1,6 +1,7 @@
 ---
 id: workspace-management--access-mgmt
 title: Access Management
+description: Learn more about how to manager team permissions in Metamapper.
 ---
 
 ## Membership

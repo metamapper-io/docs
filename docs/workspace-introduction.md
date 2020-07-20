@@ -1,6 +1,7 @@
 ---
 id: workspace-management
 title: Introduction
+description: Learn about Metamapper workspaces, a useful concept to manage teams in Metamapper.
 ---
 
 Welcome to the **Workspace Management** section of the documentation.

@@ -1,6 +1,7 @@
 ---
 id: metadata-management
 title: Welcome
+description: Learn how to setup and use Metamapper, configure Metamapper to read from your datastores, and contribute to the open source project on GitHub
 ---
 
 Welcome to the Metamapper documentation.

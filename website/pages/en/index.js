@@ -344,5 +344,7 @@ class Index extends React.Component {
   }
 }
 
-module.exports = Index;
+Index.description = 'Metamapper is a free & open-source metadata management platform and data catalog ' +
+                    'that aims to make it easier to share data and its context across your organization.';
 
+module.exports = Index;

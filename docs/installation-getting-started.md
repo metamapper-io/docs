@@ -1,6 +1,7 @@
 ---
 id: installation
 title: Getting Started
+description: The easiest way to install the latest stable version of Metamapper is using Docker. We currently do not support alternative installation methods.
 ---
 
 ## Installation

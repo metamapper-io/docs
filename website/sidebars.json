@@ -5,6 +5,7 @@
         "metadata-management--getting-started",
         "metadata-management--supported-datastores",
         "metadata-management--schema-inspection",
+        "metadata-management--ssh-tunnels",
         "metadata-management--custom-fields",
         "metadata-management--annotations",
         "metadata-management--search"
