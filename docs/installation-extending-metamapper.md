@@ -1,6 +1,7 @@
 ---
 id: installation--extending-metamapper
 title: Extensions
+description: Extensions are an advanced concept in Metamapper. Using extensions can be a way for you to customize Metamapper to fit your needs.
 ---
 
 ## What for?

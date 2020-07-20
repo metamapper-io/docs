@@ -3,9 +3,7 @@ id: installation--search
 title: Search
 ---
 
-Search is an integral part of Metamapper.
-
-Once your datastore schema is crawled and saved in the metastore, it should also be indexed via some sort of search engine. Once indexed, your users will be able to discover data assets with simple search queries.
+Search is an integral part of Metamapper. Once your datastore schema is crawled and saved in the metastore, it should also be indexed via some sort of search engine. Once indexed, your users will be able to discover data assets with simple search queries.
 
 ## Configuring the Backend
 

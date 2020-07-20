@@ -1,6 +1,7 @@
 ---
 id: metadata-management--schema-inspection
 title: Schema Inspection
+description: Schema inspection is the foundation that Metamapper was built on. Once you have connected your datastore(s), we scan and *inspect* your database schema for any changes so that we can keep your data catalog up to date.
 ---
 
 ## What's this?
