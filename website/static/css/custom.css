@@ -131,10 +131,15 @@ body {
   border-radius: 4px;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }
-.productShowcaseSection .logos img {
+.productShowcaseSection .logos.first img {
     max-height: 130px;
     padding: 20px;
     width: 130px;
+}
+.productShowcaseSection .logos.second img {
+    max-height: 130px;
+    padding: 20px 60px;
+    width: 90px;
 }
 .productShowcaseInner {
     padding-top: 24px;

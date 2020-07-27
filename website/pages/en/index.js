@@ -146,7 +146,7 @@ class HomeSplash extends React.Component {
               <div className="projectDetails">
                 <ProjectTagline tagline={siteConfig.tagline} />
                 <div className="projectDescription">
-                  Metamapper is a free &amp; open-source metadata management platform
+                  Metamapper is a free &amp; open source metadata management platform
                   that aims to make it easier to share data and its context
                   across your organization.
                 </div>
@@ -190,7 +190,20 @@ class HomeSplash extends React.Component {
 
 // A toolkit to document your data systems
 
+
 class Index extends React.Component {
+
+  renderDatastoreIcons(datastores) {
+    const showcase = datastores
+      .map(user => (
+        <a href={user.infoLink} key={user.infoLink}>
+          <img src={user.image} alt={user.alt} title={user.alt} />
+        </a>
+      ))
+
+    return showcase
+  }
+
   render() {
     const {config: siteConfig, language = ''} = this.props;
     const {baseUrl} = siteConfig;
@@ -211,7 +224,7 @@ class Index extends React.Component {
     );
 
     const Datastores = () => {
-      const datastores = [
+      const rowOne = [
         {
           alt: 'SQL Server',
           image: '/img/datastores/sqlserver.png',
@@ -223,9 +236,9 @@ class Index extends React.Component {
           infoLink: 'https://www.oracle.com/database/',
         },
         {
-          alt: 'MySQL',
-          image: '/img/datastores/mysql.png',
-          infoLink: 'https://www.mysql.com/',
+          alt: 'Google BigQuery',
+          image: '/img/datastores/bigquery.png',
+          infoLink: 'https://cloud.google.com/bigquery',
         },
         {
           alt: 'AWS Redshift',
@@ -241,24 +254,45 @@ class Index extends React.Component {
           alt: 'PostgreSQL',
           image: '/img/datastores/postgresql.png',
           infoLink: 'https://www.postgresql.org/',
-        },
+        }
       ]
 
-      const showcase = datastores
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.alt} title={user.alt} />
-          </a>
-        ));
+      const rowTwo = [
+        {
+          alt: 'Hive',
+          image: '/img/datastores/hive.png',
+          infoLink: 'https://hive.apache.org/',
+        },
+        {
+          alt: 'MySQL',
+          image: '/img/datastores/mysql.png',
+          infoLink: 'https://www.mysql.com/',
+        },
+        {
+          alt: 'Glue Data Catalog',
+          image: '/img/datastores/glue.png',
+          infoLink: 'https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro',
+        },
+        {
+          alt: 'Azure Synapse',
+          image: '/img/datastores/azure.png',
+          infoLink: 'https://azure.microsoft.com/en-us/services/synapse-analytics',
+        },
+      ]
 
       return (
         <div className="productShowcaseSection paddingBottom">
           <div className="productShowcaseInner">
             <h2>Supported Datastores</h2>
             <p>
-              Metamapper <a href={pageUrl('metadata-management--supported-datastores')}>supports these datastores</a> and is constantly adding more.
+              Metamapper <a href={pageUrl('datastores--overview')}>supports these datastores</a> and is constantly adding more.
             </p>
-            <div className="logos">{showcase}</div>
+            <div className="logos first">
+              {this.renderDatastoreIcons(rowOne)}
+            </div>
+            <div className="logos second">
+              {this.renderDatastoreIcons(rowTwo)}
+            </div>
           </div>
         </div>
       );
@@ -317,7 +351,7 @@ class Index extends React.Component {
             content: (
               <span>
                 <p>
-                  Attach notes and <a href={pageUrl('metadata-management--custom-fields')}>custom properties</a> to
+                  Attach notes and <a href={pageUrl('metadata-management--custom-properties')}>custom properties</a> to
                   any data asset. Business users can explore the catalog, ask questions, and get answers.
                 </p>
                 <p>Metamapper is a living document of your data.</p>
@@ -344,7 +378,7 @@ class Index extends React.Component {
   }
 }
 
-Index.description = 'Metamapper is a free & open-source metadata management platform and data catalog ' +
+Index.description = 'Metamapper is a free & open source metadata management platform and data catalog ' +
                     'that aims to make it easier to share data and its context across your organization.';
 
 module.exports = Index;

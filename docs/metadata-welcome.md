@@ -6,7 +6,7 @@ description: Learn how to setup and use Metamapper, configure Metamapper to read
 
 Welcome to the Metamapper documentation.
 
-This guide covers the product, how to use it, and self-hosted Metamapper. If you can't find what you are looking for in on this site, please have a look at the [discussion board](https://discuss.metamapper.io).
+This guide covers the product, how to use it, and self-hosted Metamapper. If you can't find what you are looking for in on this site, please ask us anything in the [Discord channel](http://discuss.metamapper.io).
 
 ## What is Metamapper?
 
@@ -24,9 +24,31 @@ Here are a few common use cases for Metamapper.
 
 **Data democratization** – Connect your data warehouse to Metamapper and it will create and maintain a catalog of all the data assets inside. Your team can [search](metadata-management--search) for tables, ask questions, and see what others have said about available data points.
 
-**Data privacy and classification** – Use [custom fields](metadata-management--custom-fields) to classify data assets for audits or compliance purposes. Custom fields are super flexible, so you can mark personally identifiable information (PII) or any other categorization you can think of. That way your team can see how and why data is classified a certain way and stay in compliance.
+**Data privacy and classification** – Use [custom fields](metadata-management--custom-properties) to classify data assets for audits or compliance purposes. Custom fields are super flexible, so you can mark personally identifiable information (PII) or any other categorization you can think of. That way your team can see how and why data is classified a certain way and stay in compliance.
 
 **Data lineage and quality** – Use Metamapper to document when data assets are updated, what processes updates them, what tables and fields are deprecated, etc. This can prevent your team from making decisions based on outdated or wrong information. It also helps your Data Engineering track and stay on top of this sort of deprecation work.
+
+## Quickstart
+
+> We recommend using the [official Docker bootstrap](https://github.com/getmetamapper/metamapper-setup) for production deployments.
+
+You can try out a default version of Metamapper with sample data using [Docker](https://docs.docker.com/get-docker/) and [Docker-Compose](https://docs.docker.com/compose/install/).
+
+Clone the repository:
+
+```
+git clone git@github.com:getmetamapper/metamapper.git
+```
+
+From the repository root:
+
+```
+docker-compose -f docker-quickstart.yml up
+```
+
+Head to [http://localhost:5555](http://localhost:5555) to view the Metamapper UI:
+
+![quickstart-gif](/img/quickstart.gif)
 
 ## Useful Links
 
@@ -35,4 +57,4 @@ Here are some links and guides to get you started:
 - Installing Metamapper? See the [Installation](installation) guide.
 - Just started using to Metamapper? This [guide](metadata-management--getting-started) is a good place to start.
 - Stuck? Ask a question on the [discussion board](http://discuss.metamapper.io).
-- Looking to contribute to Metamapper? Read the [CONTRIBUTING.md](http://github.com/getmetamapper/metamapper/blob/master/CONTRIBUTING.md).
+- Looking to contribute to Metamapper? Read the [CONTRIBUTING.md](https://github.com/getmetamapper/metamapper/blob/master/CONTRIBUTING.md).

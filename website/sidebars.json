@@ -3,12 +3,25 @@
     "Metadata Management": [
         "metadata-management",
         "metadata-management--getting-started",
-        "metadata-management--supported-datastores",
         "metadata-management--schema-inspection",
         "metadata-management--ssh-tunnels",
-        "metadata-management--custom-fields",
+        "metadata-management--custom-properties",
         "metadata-management--annotations",
         "metadata-management--search"
+    ],
+    "Datastores": [
+        "datastores--overview",
+        "datastores--aws-athena",
+        "datastores--aws-glue",
+        "datastores--azure-synapse",
+        "datastores--bigquery",
+        "datastores--hive-metastore",
+        "datastores--mysql",
+        "datastores--oracle",
+        "datastores--postgresql",
+        "datastores--redshift",
+        "datastores--snowflake",
+        "datastores--sql-server"
     ],
     "Workspace Management": [
         "workspace-management",

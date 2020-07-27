@@ -9,7 +9,7 @@ To connect via an SSH tunnel, you need to setup an SSH tunnel server (sometimes 
 
 ### Create SSH user
 
-We recommend creating a separate SSH user specifically for your Metamapper instance. Login to your SSH tunnel server and run the following commands:
+We recommend creating a separate SSH user specifically for your Metamapper instance. To do this, you will need to run the following commands from **within your SSH tunnel server**.
 
 Create group `metamapper`:
 
