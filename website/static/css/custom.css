@@ -200,6 +200,7 @@ img[alt="saml2-auth0-settings"] {
 @media only screen and (min-width: 360px) and (max-width: 736px) {
     .mainContainer {
         padding-bottom: 0;
+        margin-top: 12px;
     }
     .projectDescription {
         width: 100%;

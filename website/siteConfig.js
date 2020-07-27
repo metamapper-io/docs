@@ -72,6 +72,7 @@ const siteConfig = {
 
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap',
+    '/css/code-block-buttons.css',
   ],
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
@@ -83,7 +84,11 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: [
+    'https://buttons.github.io/buttons.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/js/code-block-buttons.js',
+  ],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
@@ -101,7 +106,7 @@ const siteConfig = {
   // enableUpdateBy: true,
 
   // Show documentation's last update time.
-  // enableUpdateTime: true,
+  enableUpdateTime: true,
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
