@@ -212,13 +212,15 @@ img[alt="saml2-auth0-settings"] {
         margin-left: initial;
     }
     .fixedHeaderContainer {
-        margin-top: 10px;
         padding: 16px 0;
     }
     .fixedHeaderContainer header img {
         margin: 0;
         width: 150px;
         height: 18px;
+    }
+    .docsNavContainer {
+        top: 96px;
     }
     .navSearchWrapper.reactNavSearchWrapper {
         padding-right: 10px;
