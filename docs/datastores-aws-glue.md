@@ -1,7 +1,7 @@
 ---
 id: datastores--aws-glue
-title: AWS Athena
-description: TBD
+title: AWS Glue Data Catalog
+description: Connect and document Amazon Glue Data Catalog in minutes using Metamapper. This page contains a setup aond troubleshooting guide for Glue Data Catalog connections.
 ---
 
 Metamapper supports [AWS Glue Data Catalog](https://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) as a connection source. The AWS Glue Data Catalog contains references to data that is used as sources and targets of your extract, transform, and load (ETL) jobs in AWS Glue. It can also be used as an external metastore for [Apache Hive](https://hive.apache.org/).

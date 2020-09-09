@@ -1,7 +1,7 @@
 ---
 id: datastores--aws-athena
 title: AWS Athena
-description: TBD
+description: Connect and document Amazon Athena in minutes using Metamapper. This page contains a setup aond troubleshooting guide for Amazon Athena connections.
 ---
 
 Metamapper supports [Amazon Athena](https://aws.amazon.com/athena/) as a connection source. Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL.

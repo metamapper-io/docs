@@ -1,7 +1,7 @@
 ---
 id: datastores--azure-synapse
 title: Azure Synapse
-description: TBD
+description: Connect and document Azure Synapse in minutes using Metamapper. This page contains a setup aond troubleshooting guide for Azure Synapse connections.
 ---
 
 Metamapper supports [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) as a connection source. Azure Synapse is an analytics service that brings together enterprise data warehousing and Big Data analytics.

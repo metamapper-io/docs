@@ -1,7 +1,7 @@
 ---
 id: datastores--hive-metastore
 title: Hive Metastore
-description: TBD
+description: Connect and document Apache Hive in minutes using Metamapper. This page contains a setup aond troubleshooting guide for Hive Metastore connections.
 ---
 
 Metamapper supports [Apache Hive](https://hive.apache.org/) as a connection source. Hive is distributed data warehouse software facilitates reading, writing, and managing large datasets residing in distributed storage using SQL.
