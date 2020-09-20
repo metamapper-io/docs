@@ -7,6 +7,18 @@ title: Security
 
 Metamapper uses [JSON Web Tokens (JWT)](https://jwt.io/) for authentication. Tokens have a default TTL of 24 hours.
 
+### Overriding the Authentication Middleware
+
+Authentication is handled via Django middleware. By default, Metamapper uses the [django.contrib.auth.middleware.AuthenticationMiddleware](https://docs.djangoproject.com/en/3.1/ref/middleware/#module-django.contrib.auth.middleware) class. This should be used in the vast majority of cases.
+
+You can disable authentication by setting the following environment variable:
+
+```
+METAMAPPER_AUTHENTICATION_MIDDLEWARE=app.authentication.middleware.AnonymousAuthenticationMiddleware
+```
+
+You can also use your own custom middleware if you want specific authentication logic, such as restricting authentication to certain emails or [using headers provided by a load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html). We'll have some examples up here soon.
+
 ## Encryption
 
 Sensitive information, such as database passwords and authentication tokens, are encrypted at rest using [Fernet](https://cryptography.io/en/latest/fernet/) symmetric encryption. This guarantees that sensitive variables cannot be manipulated or read without access to the encryption secret.
