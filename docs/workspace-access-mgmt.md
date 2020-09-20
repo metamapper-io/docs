@@ -77,7 +77,7 @@ Users with this permission can view the datastore, but cannot interact with any 
 
 ##### Change Datastore Settings
 
-Users with this permission can update datastore settings, such as the [allowed custom properties](metadata-management--custom-fields#hiding-a-custom-field) and the nickname of the datastore.
+Users with this permission can update datastore settings, such as the [allowed custom properties](metadata-management--custom-properties#hiding-a-custom-field) and the nickname of the datastore.
 
 ##### Change Datastore Connection
 

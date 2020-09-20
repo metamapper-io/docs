@@ -109,7 +109,7 @@ Metamapper syncs your datastores on an hourly basis. Once the sync is complete, 
 
 ![datastore-data-assets](/img/guides/datastore-data-assets.png)
 
-Using object identities, metadata that you add via [annotations](metadata-management--annotations), [custom fields](metadata-management--custom-fields), and other mechanisms will be retained between syncs.
+Using object identities, metadata that you add via [annotations](metadata-management--annotations), [custom properties](metadata-management--custom-properties), and other mechanisms will be retained between syncs.
 
 > Search is a powerful way to find data assets. Check out the [Search](metadata-management--search) section for more details.
 

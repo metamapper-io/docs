@@ -19,7 +19,7 @@ You connect your data warehouse(s) to Metamapper using readonly credentials. It 
 
 **[Notes and annotations](https://www.metamapper.io/docs/metadata-management--annotations)** can be added to every object. This turns the documentation process into a collective effort. Business users can explore metadata, ask questions, and get answers. Notes are stored in perpetuity so that team members can find answers to the same question quickly in the future.
 
-Every team is unique. And every database has different documentation requirements. Metamapper offers fully-configurable **[custom properties](https://www.metamapper.io/docs/metadata-management--custom-fields)** so you can classify your assets (useful for data audits), add data owners, link to external resources, and label whatever else you can think of.
+Every team is unique. And every database has different documentation requirements. Metamapper offers fully-configurable **[custom properties](https://www.metamapper.io/docs/metadata-management--custom-properties)** so you can classify your assets (useful for data audits), add data owners, link to external resources, and label whatever else you can think of.
 
 It's not uncommon to have thousands of tables in your data warehouse. How can you ever find what you need in that sea of information? Well, Metamapper will index every table it has access to. This feeds into a **[powerful search engine](https://www.metamapper.io/docs/metadata-management--search)** that let's you quickly search across all of your connected databases for whatever you are looking for.
 
