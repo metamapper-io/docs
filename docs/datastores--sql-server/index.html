@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Microsoft SQL Server · Metamapper</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Connect and document Microsoft SQL Server in minutes using Metamapper. This page contains a setup aond troubleshooting guide for SQL Server connections."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Microsoft SQL Server · Metamapper"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.metamapper.io/"/><meta property="og:description" content="Connect and document Microsoft SQL Server in minutes using Metamapper. This page contains a setup aond troubleshooting guide for SQL Server connections."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://www.metamapper.io/blog/atom.xml" title="Metamapper Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://www.metamapper.io/blog/feed.xml" title="Metamapper Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-171539836-1', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/brand/logo.png" alt="Metamapper"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class="siteNavGroupActive"><a href="/docs/metadata-management" target="_self">Documentation</a></li><li class=""><a href="http://discuss.metamapper.io" target="_self">Discussion</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://github.com/getmetamapper/metamapper" target="_self">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Datastores</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Metadata Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/metadata-management">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--schema-inspection">Schema Inspection</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--ssh-tunnels">SSH Tunnels</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--custom-properties">Custom Properties</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--annotations">Annotations</a></li><li class="navListItem"><a class="navItem" href="/docs/metadata-management--search">Search</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Datastores</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/datastores--overview">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--aws-athena">AWS Athena</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--aws-glue">AWS Glue Data Catalog</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--azure-synapse">Azure Synapse</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--bigquery">Google BigQuery</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--hive-metastore">Hive Metastore</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--mysql">MySQL</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--oracle">Oracle</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--postgresql">PostgreSQL</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--redshift">Redshift</a></li><li class="navListItem"><a class="navItem" href="/docs/datastores--snowflake">Snowflake</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/datastores--sql-server">Microsoft SQL Server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Workspace Management</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/workspace-management">Introduction</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--access-mgmt">Access Management</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-introduction">Single Sign-On (SSO)</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-google">SSO Setup: Google</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-github">SSO Setup: Github</a></li><li class="navListItem"><a class="navItem" href="/docs/workspace-management--sso-saml2">SSO Setup: SAML2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation (Self-Hosted)</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--configuring-metamapper">Configuring Metamapper</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--extending-metamapper">Extensions</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--asynchronous-workers">Asynchronous Workers</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--email-configuration">Email Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--file-storage">File Storage</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--security">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--search">Search</a></li><li class="navListItem"><a class="navItem" href="/docs/installation--healthchecks">Healthchecks</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Microsoft SQL Server</h1></header><article><div><span><p>Metamapper supports <a href="https://www.microsoft.com/en-us/sql-server/sql-server-2019">Microsoft SQL Server</a> as a connection source. SQL Server is a relational database management system developed by Microsoft. This guide also applies for connections to <a href="https://azure.microsoft.com/en-us/services/sql-database/">Azure SQL Database</a>, which is powered by the same engine.</p>
+<p>This guide details how to setup and troubleshoot SQL Server in Metamapper.</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ul>
+<li><p><strong>A running Microsoft SQL Server instance.</strong> Instructions for creating a SQL Server database are outside the scope of this guide; it assume that you have an instance up and running. For help getting spinning up your own SQL Server instance, please refer to your cloud provider's documentation.</p></li>
+<li><p><strong>Ability to view database connection details</strong>. Metamapper specifically needs the following information:</p>
+<ul>
+<li>IP or host</li>
+<li>Username</li>
+<li>Password</li>
+<li>Port (default: 1433)</li>
+<li>Database</li>
+</ul></li>
+<li><p><strong>Database privileges that allow you to create users and grant privileges.</strong> This is required to create a database user for Metamapper.</p></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="choose-connection-method"></a><a href="#choose-connection-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Choose connection method</h2>
+<p>There are two ways to connect your database.</p>
+<h3><a class="anchor" aria-hidden="true" id="direct-connection"></a><a href="#direct-connection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Direct Connection</h3>
+<p>A direct connection will work if Metamapper is in the same private network as your database. A direction connection will also work if your database is publicly accessible.</p>
+<h3><a class="anchor" aria-hidden="true" id="ssh-tunnel"></a><a href="#ssh-tunnel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSH Tunnel</h3>
+<p>A jump host or SSH tunnel is required if your database is in a separate private network. This method uses a publicly accessible server to act as an intermediary between Metamapper and your database.</p>
+<p>Check out <a href="metadata-management--ssh-tunnels">this guide</a> on setting up a SSH tunnel to work with Metamapper.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-user"></a><a href="#create-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create user</h2>
+<p>You will need to provide a user that Metamapper will use to periodically scan your database. We recommend creating a new user so that you can easily isolate Metamapper from the rest of your infrastructure.</p>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">CREATE</span> LOGIN metamapper <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">PASSWORD</span> = <span class="hljs-string">'&lt;redacted&gt;'</span>;
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">USER</span> metamapper <span class="hljs-keyword">FOR</span> LOGIN metamapper;
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="grant-read-access-to-user"></a><a href="#grant-read-access-to-user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grant read access to user</h2>
+<p>Run the following stored procedure will grant the <code>metamapper</code> user read access to every object within your SQL Server database.</p>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">USE</span> &lt;<span class="hljs-keyword">database</span>&gt;
+EXEC sp_addrolemember <span class="hljs-string">'db_datareader'</span>, <span class="hljs-string">'metamapper'</span>
+</code></pre>
+<p>Metamapper needs read access to the tables it wishes to sync. Metamapper will only read metadata <em>about</em> your tables. It will never read the contents of your tables.</p>
+<p>You can then <a href="https://docs.microsoft.com/en-us/sql/t-sql/statements/revoke-object-permissions-transact-sql">revoke access</a> to a subset of tables or other database objects using statements similar to this:</p>
+<pre><code class="hljs css language-sql"><span class="hljs-keyword">USE</span> &lt;<span class="hljs-keyword">database</span>&gt;
+<span class="hljs-keyword">REVOKE</span> <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">OBJECT</span>::&lt;<span class="hljs-keyword">schema</span>&gt;.&lt;<span class="hljs-keyword">table</span>&gt; <span class="hljs-keyword">FROM</span> metamapper;
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="questions-feedback"></a><a href="#questions-feedback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Questions? Feedback?</h2>
+<p>Did this article help? If you have questions or feedback, feel free to <a href="https://github.com/getmetamapper/documentation">submit a pull request</a> with your recommendations, <a href="https://github.com/getmetamapper/documentation/issues/new">open a Github issue</a>, or <a href="http://discuss.metamapper.io">join the discussion</a> on Discord.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/9/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/datastores--snowflake"><span class="arrow-prev">← </span><span>Snowflake</span></a><a class="docs-next button" href="/docs/workspace-management"><span>Introduction</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#choose-connection-method">Choose connection method</a><ul class="toc-headings"><li><a href="#direct-connection">Direct Connection</a></li><li><a href="#ssh-tunnel">SSH Tunnel</a></li></ul></li><li><a href="#create-user">Create user</a></li><li><a href="#grant-read-access-to-user">Grant read access to user</a></li><li><a href="#questions-feedback">Questions? Feedback?</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a href="/" class="nav-home"><img src="/img/brand/logo-white.png" alt="Metamapper"/></a></div><div><h5>Documentation</h5><a href="/docs/metadata-management" target="_blank" rel="noreferrer noopener">User Guide</a><a href="/docs/installation" target="_blank" rel="noreferrer noopener">Installation Guide</a></div><div><h5>Community</h5><a href="http://discuss.metamapper.io" target="_blank" rel="noreferrer noopener">Discussion</a><a href="https://github.com/getmetamapper/metamapper">GitHub</a></div></section><section class="copyright">Copyright © 2020 Scott Cruwys</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f9c9d9ae74b48def75d41abe3997200e',
+                indexName: 'metamapper',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
