@@ -40,7 +40,7 @@ The following is a list of settings and what they control:
 | `METAMAPPER_GOOGLE_CLIENT_ID`           |    | None |
 | `METAMAPPER_GOOGLE_CLIENT_SECRET`       |    | None |
 | `METAMAPPER_INCLUDE_EXAMPLE_DATASTORES` | Load sample data on bootup | False |
-| `METAMAPPER_SEARCH_BACKEND`             | See [Search](installation--search) section. | app.omnisearch.backends.postgres_search_backend.PostgresSearchBackend |
+| `METAMAPPER_SEARCH_BACKEND`             | See [Search](installation--search) section. | app.omnisearch.backends.elastic_backend.ElasticBackend |
 | `METAMAPPER_FILE_STORAGE_BACKEND`       | See [File Storage](installation--file-storage) section. | django.core.files.storage.FileSystemStorage |
 | `METAMAPPER_FILE_STORAGE_BUCKET_ACL`    |    | private |
 | `METAMAPPER_MEDIA_ROOT`                 |    | uploads/ |
